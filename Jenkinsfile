@@ -14,16 +14,13 @@ pipeline{
      git 'https://github.com/inafea/seleniumWithCore'
       }
      }
-     stage('Restore packages'){
+     stage('Restore packages & clean'){
    steps{
       bat 'dotnet restore C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj'
+      bat "dotnet clean C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj"
      }
   }
-  stage('Clean'){
-    steps{
-        bat "dotnet clean C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj"
-     }
-   }
+  
    stage('Build'){
    steps{
       bat "dotnet build C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj --configuration Release"
