@@ -31,9 +31,14 @@ pipeline{
  }
   stage('Sonar'){
        steps{
-        bat 'SonarScanner.MSBuild.exe begin /k:"Employee-demo-test" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="63914d3b5f2b1cf5002a052a5c306a7ee82cd946"'
-        bat 'MsBuild.exe /t:Rebuild'
-        bat 'SonarScanner.MSBuild.exe end /d:sonar.login="63914d3b5f2b1cf5002a052a5c306a7ee82cd946"'
+
+         bat ' dotnet --output="C:/Rep2/sample.html" --reportType=HTML -- test "C:/Jenkins/workspace/emp-05/EmployeesApp.IntegrationTests/EmployeesApp.IntegrationTests.csproj"'
+
+                       bat 'dotnet-sonarscanner begin begin /k:"Employee-demo-test" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="63914d3b5f2b1cf5002a052a5c306a7ee82cd946" /d:sonar.cs.dotcover.reportsPaths="C:/Rep2/sample.html"'
+                       bat 'dotnet build'
+                       bat 'dotnet-sonarscanner end /d:sonar.login="63914d3b5f2b1cf5002a052a5c306a7ee82cd946"'
+
+       
        }
      }
  stage('Test: Unit Test'){
