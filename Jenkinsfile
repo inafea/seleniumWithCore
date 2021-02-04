@@ -1,5 +1,5 @@
 pipeline{
-    agent {label 'forwindows'}
+    agent {label 'test-win'}
     
     environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
