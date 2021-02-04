@@ -42,7 +42,7 @@ pipeline{
    }
    stage('Publish'){
      steps{
-       bat "dotnet publish C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj --output C:\Publish\empapp"
+       bat "dotnet publish C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj --output C:/Publish/empapp"
       
      }
 }
