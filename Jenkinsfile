@@ -4,10 +4,10 @@ pipeline{
     stages{
     
     stage ('checkout'){
+
       steps{
         echo "$GIT_BRANCH"
       }
-      
     }
   }
     
