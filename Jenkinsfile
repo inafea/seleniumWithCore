@@ -1,6 +1,7 @@
+def APP_Proj='EmployeesApp/EmployeesApp.csproj'
 pipeline{
     agent {label 'test-win'}
-    def APP_Proj='EmployeesApp/EmployeesApp.csproj'
+    
     environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
         }
