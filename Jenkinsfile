@@ -24,7 +24,7 @@ pipeline{
   
    stage('Build'){
    steps{
-      bat "dotnet build C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj --configuration Release"
+      bat "dotnet build ${WORKSPACE}/${APP_Proj} --configuration Release"
     }
  }
   
