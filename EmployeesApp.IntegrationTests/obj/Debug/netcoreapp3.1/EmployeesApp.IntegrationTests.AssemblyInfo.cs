@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("EmployeesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\DevOPs-Intern\\dotnet-core-selenium-tests\\EmployeesApp", "EmployeesApp.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("EmployeesApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "d:\\MOF-DevOPs\\Practice\\seleniumWithCore\\EmployeesApp", "EmployeesApp.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmployeesApp.IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
