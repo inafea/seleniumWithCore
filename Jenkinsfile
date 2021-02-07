@@ -1,4 +1,6 @@
-def APP_Proj='EmployeesApp/EmployeesApp.csproj'
+def APP_PROJ='EmployeesApp/EmployeesApp.csproj'
+def UNITTEST_PROJ='EmployeesApp.Tests/EmployeesApp.Tests.csproj'
+def INTEGRATIONTEST_PROJ='EmployeesApp.IntegrationTests/EmployeesApp.IntegrationTests.csproj'
 pipeline{
     agent {label 'test-win'}
     
@@ -24,24 +26,24 @@ pipeline{
   
    stage('Build'){
    steps{
-      bat "dotnet build ${WORKSPACE}/${APP_Proj} --configuration Release"
+      bat "dotnet build ${WORKSPACE}/${APP_PROJ} --configuration Release"
     }
  }
   
  stage('Test: Unit Test'){
    steps {
-     bat "dotnet test C:/Jenkins/workspace/emp-05//EmployeesApp.Tests/EmployeesApp.Tests.csproj"
+     bat "dotnet test ${WORKSPACE}/${UNITTEST_PROJ}"
      }
   }
        
  stage('Test: Integration Test'){
     steps {
-       bat "dotnet test C:/Jenkins/workspace/emp-05/EmployeesApp.IntegrationTests/EmployeesApp.IntegrationTests.csproj"
+       bat "dotnet test ${WORKSPACE}/${INTEGRATIONTEST_PROJ}"
       }
    }
    stage('Publish'){
      steps{
-       bat "dotnet publish C:/Jenkins/workspace/emp-05/EmployeesApp/EmployeesApp.csproj --output C:/Publish/empapp"
+       bat "dotnet publish ${WORKSPACE}/${APP_PROJ} --output C:/Publish/empapp"
       
      }
      }
